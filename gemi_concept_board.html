@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemi — Brand & Concept Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#1A1A1A;
+    --white:#FFFFFF;
+    --paper:#F4F1EC;
+    --terracotta:#9B4A3A;
+    --rust:#A85843;
+    --olive:#556B2F;
+    --sage:#8A9A5B;
+    --walnut:#8B5A2B;
+    --cream:#EADCC9;
+    --line:#1A1A1A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#cfcabf;font-family:'Familjen Grotesk',sans-serif;color:var(--black);padding:40px 20px;}
+  .board{
+    width:1240px;max-width:100%;margin:0 auto;background:var(--paper);
+    border:1.5px solid var(--black);
+  }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead{
+    display:grid;grid-template-columns:1.4fr 1fr;border-bottom:1.5px solid var(--black);
+  }
+  .mast-left{padding:46px 48px 40px;border-right:1.5px solid var(--black);}
+  .kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--terracotta);}
+  .wordmark{font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:104px;line-height:.86;letter-spacing:-.04em;margin:14px 0 6px;position:relative;display:inline-block;}
+  .wordmark .dot{position:relative;}
+  .wordmark .dot::before,.wordmark .dot::after{
+    content:"";position:absolute;background:var(--black);border-radius:50%;
+  }
+  /* umlaut-style seed marks over the i */
+  .seed{position:absolute;top:-2px;width:100%;height:30px;}
+  .tag{font-family:'Fraunces',serif;font-style:italic;font-size:21px;color:var(--black);margin-top:8px;}
+  .sub{font-size:13.5px;line-height:1.6;color:#4a4a4a;margin-top:18px;max-width:430px;}
+  .mast-right{padding:40px 44px;display:flex;flex-direction:column;justify-content:space-between;background:var(--black);color:var(--white);}
+  .mr-top{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);font-weight:600;}
+  .mr-big{font-family:'Fraunces',serif;font-size:30px;line-height:1.18;margin-top:14px;font-weight:500;}
+  .mr-meta{font-size:12px;line-height:1.9;color:#cfcabf;margin-top:auto;padding-top:24px;}
+  .mr-meta b{color:#fff;font-weight:600;}
+
+  /* ---------- SECTION TITLES ---------- */
+  .sec-title{
+    display:flex;align-items:center;gap:14px;padding:20px 48px;border-bottom:1.5px solid var(--black);
+    font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;
+  }
+  .sec-title .num{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--terracotta);letter-spacing:0;}
+
+  /* ---------- PALETTE ---------- */
+  .palette{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1.5px solid var(--black);}
+  .swatch{height:150px;padding:14px 16px;display:flex;flex-direction:column;justify-content:flex-end;border-right:1.5px solid rgba(0,0,0,.18);}
+  .swatch:last-child{border-right:none;}
+  .swatch .nm{font-size:12.5px;font-weight:700;}
+  .swatch .hx{font-size:10.5px;letter-spacing:.05em;opacity:.8;margin-top:3px;font-variant-numeric:tabular-nums;}
+  .on-dark{color:#fff;} .on-light{color:#1A1A1A;}
+
+  /* ---------- TYPE + ELEMENTS ROW ---------- */
+  .midgrid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1.5px solid var(--black);}
+  .cell{padding:34px 40px;}
+  .cell.bdr{border-right:1.5px solid var(--black);}
+  .lbl{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--terracotta);margin-bottom:18px;}
+  .type-display{font-family:'Fraunces',serif;font-size:40px;font-weight:500;line-height:1.04;}
+  .type-display span{font-style:italic;}
+  .type-note{font-size:12px;color:#555;margin-top:8px;}
+  .type-body{font-family:'Familjen Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:.02em;margin-top:24px;}
+  .type-body small{display:block;font-weight:400;font-size:12px;color:#555;margin-top:6px;letter-spacing:.16em;}
+
+  .matgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .mat{border:1.25px solid var(--black);padding:14px;display:flex;flex-direction:column;gap:10px;min-height:96px;justify-content:space-between;}
+  .mat .chip{height:38px;border-radius:3px;border:1px solid rgba(0,0,0,.15);}
+  .mat .mt{font-size:11.5px;font-weight:700;}
+  .mat .md{font-size:10.5px;color:#555;line-height:1.4;}
+
+  /* ---------- MOODBOARD STRIP ---------- */
+  .mood{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1.5px solid var(--black);}
+  .mood .m{aspect-ratio:1/1.05;border-right:1.5px solid var(--black);position:relative;overflow:hidden;display:flex;align-items:flex-end;}
+  .mood .m:last-child{border-right:none;}
+  .mood .cap{position:relative;z-index:2;padding:12px;font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.04em;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+
+  /* floor pattern swatch */
+  .floorpat{background:
+    repeating-linear-gradient(45deg,#1A1A1A 0 14px,#fff 14px 28px);}
+  /* counter glass block */
+  .glassblk{background:
+    linear-gradient(135deg,rgba(255,255,255,.85),rgba(200,210,205,.6)),
+    repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 30px),
+    repeating-linear-gradient(90deg,rgba(0,0,0,.18) 0 1px,transparent 1px 30px);
+    background-color:#dfe4e0;}
+  .seating{background:linear-gradient(160deg,var(--rust),#7d4133);}
+  .patio{background:linear-gradient(160deg,var(--olive),#3f5022);}
+
+  /* ---------- FOOTER STATEMENT ---------- */
+  .foot{display:grid;grid-template-columns:1.5fr 1fr;}
+  .foot .fl{padding:38px 48px;}
+  .foot .fr{padding:38px 44px;background:var(--terracotta);color:#fff;border-left:1.5px solid var(--black);}
+  .foot h3{font-family:'Fraunces',serif;font-size:23px;font-weight:500;margin-bottom:12px;}
+  .foot p{font-size:13px;line-height:1.7;color:#444;}
+  .foot .fr p{color:#fbeee9;}
+  .foot .fr .lbl{color:#fbeee9;}
+  .pill{display:inline-block;border:1.25px solid var(--black);border-radius:40px;padding:6px 14px;font-size:11px;font-weight:600;margin:5px 6px 0 0;}
+
+  .footer-bar{padding:16px 48px;border-top:1.5px solid var(--black);display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#666;}
+</style>
+</head>
+<body>
+<div class="board" id="board">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="mast-left">
+      <div class="kicker">Premium Fast Casual · Rayfield, Jos</div>
+      <div class="wordmark">gem<span class="dot">i<svg class="seed" viewBox="0 0 40 30"><ellipse cx="13" cy="11" rx="6.5" ry="8" fill="#1A1A1A"/><ellipse cx="27" cy="9" rx="5" ry="6.5" fill="#1A1A1A" transform="rotate(18 27 9)"/></svg></span></div>
+      <div class="tag">good food, no waiting.</div>
+      <div class="sub">A modern grab-and-go kitchen for burgers, shawarma and signature rice bowls — built on a crisp monochrome canvas, warmed with terracotta, walnut and living green. Editorial, photogenic, and made to scale.</div>
+    </div>
+    <div class="mast-right">
+      <div class="mr-top">Brand & Concept Board</div>
+      <div class="mr-big">A high-contrast canvas that lets the food do the talking.</div>
+      <div class="mr-meta">
+        <b>Project</b> &nbsp; Gemi Takeaway, Rayfield<br>
+        <b>Format</b> &nbsp; Single open-front bay · ~38 m²<br>
+        <b>Direction</b> &nbsp; Refined minimal / fast-casual<br>
+        <b>Prepared for</b> &nbsp; Lease proposal & fit-out
+      </div>
+    </div>
+  </div>
+
+  <!-- PALETTE -->
+  <div class="sec-title"><span class="num">01</span> Colour System</div>
+  <div class="palette">
+    <div class="swatch on-light" style="background:#FFFFFF;"><div class="nm">Bright White</div><div class="hx">#FFFFFF</div></div>
+    <div class="swatch on-dark" style="background:#1A1A1A;"><div class="nm">Matte Black</div><div class="hx">#1A1A1A</div></div>
+    <div class="swatch on-dark" style="background:#9B4A3A;"><div class="nm">Terracotta</div><div class="hx">#9B4A3A</div></div>
+    <div class="swatch on-light" style="background:#EADCC9;"><div class="nm">Cream</div><div class="hx">#EADCC9</div></div>
+    <div class="swatch on-dark" style="background:#556B2F;"><div class="nm">Olive</div><div class="hx">#556B2F</div></div>
+    <div class="swatch on-dark" style="background:#8B5A2B;"><div class="nm">Walnut</div><div class="hx">#8B5A2B</div></div>
+  </div>
+
+  <!-- TYPE + MATERIALS -->
+  <div class="midgrid">
+    <div class="cell bdr">
+      <div class="lbl">02 · Typography</div>
+      <div class="type-display">Crisp <span>headlines,</span><br>generous space.</div>
+      <div class="type-note">Display · Fraunces (soft serif, editorial)</div>
+      <div class="type-body">GEMI · BURGERS · SHAWARMA · BOWLS
+        <small>Body & UI · Familjen Grotesk — clean geometric sans</small>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="lbl">03 · Materials & Finishes</div>
+      <div class="matgrid">
+        <div class="mat"><div class="chip" style="background:repeating-linear-gradient(45deg,#1A1A1A 0 8px,#fff 8px 16px);"></div><div><div class="mt">Chevron Marble Floor</div><div class="md">Black & white porcelain, staggered stripe</div></div></div>
+        <div class="mat"><div class="chip glassblk"></div><div><div class="mt">Glass-Block Counter</div><div class="md">Backlit, marble quartz top</div></div></div>
+        <div class="mat"><div class="chip" style="background:linear-gradient(160deg,#A85843,#7d4133);"></div><div><div class="mt">Channel-Tufted Seating</div><div class="md">Terracotta & grey velvet</div></div></div>
+        <div class="mat"><div class="chip" style="background:linear-gradient(160deg,#8B5A2B,#6b4420);"></div><div><div class="mt">Walnut Tulip Tables</div><div class="md">Round tops, black pedestal base</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOODBOARD -->
+  <div class="sec-title"><span class="num">04</span> Design Language</div>
+  <div class="mood">
+    <div class="m floorpat"><div class="cap">Graphic monochrome floor</div></div>
+    <div class="m glassblk"><div class="cap" style="color:#1A1A1A;text-shadow:none;">Illuminated service counter</div></div>
+    <div class="m seating"><div class="cap">Warm tactile seating nook</div></div>
+    <div class="m patio"><div class="cap">Green festoon-lit frontage</div></div>
+  </div>
+
+  <!-- FOOTER STATEMENT -->
+  <div class="foot">
+    <div class="fl">
+      <div class="lbl">05 · Positioning</div>
+      <h3>Why this works in Rayfield.</h3>
+      <p>Rayfield sits on a busy arterial road with a spending, image-conscious customer base and few premium quick-service options. Gemi avoids the tired fast-food clichés of loud reds and plastic seating. Instead it offers a clean, photogenic space people want to be seen in and post about — turning every customer into free marketing.</p>
+      <div style="margin-top:14px;">
+        <span class="pill">Open-front bay</span>
+        <span class="pill">Drive-by visibility</span>
+        <span class="pill">Delivery-first</span>
+        <span class="pill">Instagrammable</span>
+      </div>
+    </div>
+    <div class="fr">
+      <div class="lbl">The one thing to remember</div>
+      <p style="font-family:'Fraunces',serif;font-size:19px;line-height:1.4;margin-bottom:14px;">Strip everything back to black and white — then let bright Nigerian food be the only colour that shouts.</p>
+      <p>That single discipline is what makes the brand feel premium, scalable and unmistakably its own.</p>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>Gemi · Concept Board v1</span>
+    <span>Rayfield · Jos · Plateau State</span>
+  </div>
+
+</div>
+</body>
+</html>

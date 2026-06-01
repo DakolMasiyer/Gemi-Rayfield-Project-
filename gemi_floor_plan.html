@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemi — Floor Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#1A1A1A;--paper:#F4F1EC;--terracotta:#9B4A3A;--olive:#556B2F;--sage:#8A9A5B;--walnut:#8B5A2B;--cream:#EADCC9;--blue:#3a4d63;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#cfcabf;font-family:'Familjen Grotesk',sans-serif;color:var(--black);padding:34px 18px;}
+  .sheet{width:1240px;max-width:100%;margin:0 auto;background:var(--paper);border:1.5px solid var(--black);}
+  .head{display:grid;grid-template-columns:1.5fr 1fr;border-bottom:1.5px solid var(--black);}
+  .h-l{padding:30px 40px;border-right:1.5px solid var(--black);}
+  .kick{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--terracotta);}
+  .ttl{font-family:'Fraunces',serif;font-size:42px;font-weight:500;margin-top:8px;letter-spacing:-.01em;}
+  .ttl span{font-style:italic;}
+  .h-l p{font-size:13px;color:#555;margin-top:8px;max-width:440px;line-height:1.6;}
+  .h-r{padding:24px 32px;display:flex;flex-direction:column;justify-content:center;gap:7px;background:var(--black);color:#fff;}
+  .h-r .row{display:flex;justify-content:space-between;font-size:12px;border-bottom:1px solid #333;padding-bottom:6px;}
+  .h-r .row b{color:var(--sage);font-weight:600;letter-spacing:.04em;}
+  .h-r .row span{color:#eee;}
+  .plan-wrap{padding:28px 36px 10px;}
+  svg{width:100%;height:auto;display:block;}
+  .legend{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--black);}
+  .lg{padding:15px 20px;border-right:1px solid rgba(0,0,0,.18);display:flex;gap:10px;align-items:flex-start;}
+  .lg:last-child{border-right:none;}
+  .lg .sw{width:22px;height:22px;border:1.25px solid var(--black);flex-shrink:0;border-radius:2px;}
+  .lg .t{font-size:11px;font-weight:700;line-height:1.3;}
+  .lg .t small{display:block;font-weight:400;color:#666;font-size:10px;margin-top:2px;}
+  .works{padding:18px 40px;border-top:1.5px solid var(--black);background:#efe9df;}
+  .works h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta);font-weight:700;margin-bottom:10px;}
+  .works ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px 24px;}
+  .works li{font-size:11.5px;line-height:1.4;padding-left:18px;position:relative;color:#333;}
+  .works li::before{content:"\25B8";position:absolute;left:0;color:var(--terracotta);font-size:11px;}
+  .foot{padding:14px 40px;border-top:1.5px solid var(--black);display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#666;}
+  text{font-family:'Familjen Grotesk',sans-serif;}
+  .dim{font-size:13px;fill:#333;font-weight:600;}
+  .dimsm{font-size:10.5px;fill:#555;}
+  .rmlbl{font-size:16px;font-weight:700;fill:var(--black);letter-spacing:.02em;}
+  .rmsub{font-size:10.5px;fill:#666;}
+  .tag{font-size:11px;font-weight:600;fill:#fff;}
+  .tagdk{font-size:11px;font-weight:600;fill:var(--black);}
+  .arrow{stroke:var(--terracotta);stroke-width:2;fill:none;marker-end:url(#ah);}
+  .note{font-size:10.5px;fill:var(--terracotta);font-weight:600;}
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet">
+  <div class="head">
+    <div class="h-l">
+      <div class="kick">Drawing 01 · Ground Floor Plan</div>
+      <div class="ttl">Floor <span>Plan</span></div>
+      <p>Kitchen end-unit plus three connected open bays, opening to a forecourt patio. Counter and pass-through at the kitchen end; indoor seating across the middle and far bays. Drawn to scale from site survey.</p>
+    </div>
+    <div class="h-r">
+      <div class="row"><b>Leased</b><span>Kitchen + 3 bays</span></div>
+      <div class="row"><b>Front run</b><span>~14.6 m (48 ft)</span></div>
+      <div class="row"><b>Bay depth</b><span>6.3 m (20'8")</span></div>
+      <div class="row"><b>Front beam ht.</b><span>2.34 m (7'8")</span></div>
+      <div class="row"><b>Indoor area</b><span>~68 m²</span></div>
+    </div>
+  </div>
+
+  <div class="plan-wrap">
+    <svg viewBox="0 0 1080 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#9B4A3A"/></marker>
+        <pattern id="chevron" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="30" height="30" fill="#ffffff"/><rect width="15" height="30" fill="#1A1A1A"/>
+        </pattern>
+        <pattern id="kitchentile" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect width="20" height="20" fill="#ececec"/><rect width="20" height="20" fill="none" stroke="#cfcfcf" stroke-width="1"/>
+        </pattern>
+        <pattern id="patio" width="28" height="28" patternUnits="userSpaceOnUse">
+          <rect width="28" height="28" fill="#e7e2d8"/><rect width="28" height="28" fill="none" stroke="#cabfa8" stroke-width="1"/>
+        </pattern>
+      </defs>
+
+      <rect x="60" y="70" width="170" height="334" fill="url(#kitchentile)" stroke="#1A1A1A" stroke-width="3"/>
+      <rect x="230" y="70" width="660" height="334" fill="url(#chevron)" stroke="#1A1A1A" stroke-width="3"/>
+
+      <line x1="230" y1="70" x2="230" y2="404" stroke="#1A1A1A" stroke-width="3"/>
+      <rect x="226" y="150" width="8" height="60" fill="#F4F1EC"/>
+      <path d="M230,150 A60,60 0 0,1 290,210" fill="none" stroke="#9B4A3A" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <rect x="296" y="166" width="158" height="18" rx="3" fill="#F4F1EC" stroke="#9B4A3A" stroke-width="1"/>
+      <text x="305" y="179" class="note">(1) NEW pass-through door</text>
+      <path class="arrow" d="M300,188 L242,200"/>
+
+      <rect x="95" y="66" width="56" height="8" fill="#8B5A2B"/>
+      <text x="123" y="58" class="dimsm" text-anchor="middle">existing door · staff &amp; delivery in</text>
+
+      <rect x="74" y="92" width="142" height="30" fill="#cdd2d6" stroke="#1A1A1A" stroke-width="1.5"/>
+      <text x="145" y="111" class="dimsm" text-anchor="middle">cooking line / grills</text>
+      <rect x="74" y="320" width="64" height="60" fill="#cdd2d6" stroke="#1A1A1A" stroke-width="1.5"/>
+      <text x="106" y="354" class="dimsm" text-anchor="middle">prep</text>
+      <rect x="150" y="320" width="66" height="60" fill="#cdd2d6" stroke="#1A1A1A" stroke-width="1.5"/>
+      <text x="183" y="354" class="dimsm" text-anchor="middle">cold store</text>
+      <text x="145" y="210" class="rmlbl" text-anchor="middle">KITCHEN</text>
+      <text x="145" y="227" class="rmsub" text-anchor="middle">back of house</text>
+      <text x="145" y="255" class="note" text-anchor="middle">(2) seal wall crack</text>
+
+      <rect x="430" y="394" width="18" height="20" fill="#b0a890" stroke="#1A1A1A" stroke-width="1.5"/>
+      <rect x="650" y="394" width="18" height="20" fill="#b0a890" stroke="#1A1A1A" stroke-width="1.5"/>
+      <text x="439" y="430" class="dimsm" text-anchor="middle">pier</text>
+      <text x="659" y="430" class="dimsm" text-anchor="middle">pier</text>
+
+      <rect x="250" y="92" width="150" height="40" fill="#dfe4e0" stroke="#1A1A1A" stroke-width="2"/>
+      <line x1="250" y1="112" x2="400" y2="112" stroke="#b9c2bc" stroke-width="1"/>
+      <rect x="252" y="66" width="160" height="20" rx="3" fill="#F4F1EC" stroke="#1A1A1A" stroke-width="1"/>
+      <text x="332" y="80" class="tagdk" text-anchor="middle">illuminated counter</text>
+      <rect x="250" y="138" width="56" height="36" fill="#1A1A1A"/>
+      <text x="278" y="160" class="tag" text-anchor="middle">POS</text>
+      <text x="332" y="300" class="rmsub" text-anchor="middle">order &amp; pickup</text>
+
+      <circle cx="520" cy="230" r="30" fill="#8B5A2B" stroke="#1A1A1A" stroke-width="2"/>
+      <circle cx="520" cy="192" r="12" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="520" cy="268" r="12" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="482" cy="230" r="12" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="558" cy="230" r="12" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="700" cy="230" r="30" fill="#8B5A2B" stroke="#1A1A1A" stroke-width="2"/>
+      <circle cx="700" cy="192" r="12" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="700" cy="268" r="12" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="662" cy="230" r="12" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="738" cy="230" r="12" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="830" cy="320" r="30" fill="#8B5A2B" stroke="#1A1A1A" stroke-width="2"/>
+      <circle cx="830" cy="282" r="12" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="792" cy="320" r="12" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.3"/>
+      <circle cx="868" cy="320" r="12" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.3"/>
+      <rect x="784" y="92" width="96" height="22" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.5" rx="3"/>
+      <text x="832" y="107" class="tag" text-anchor="middle">banquette</text>
+
+      <rect x="556" y="138" width="300" height="40" rx="4" fill="#F4F1EC" stroke="#1A1A1A" stroke-width="1"/>
+      <text x="706" y="156" class="rmlbl" text-anchor="middle">INDOOR SEATING</text>
+      <text x="706" y="172" class="rmsub" text-anchor="middle">chevron marble · bays 2 &amp; 3</text>
+
+      <line x1="230" y1="404" x2="890" y2="404" stroke="#3a4d63" stroke-width="5"/>
+      <text x="560" y="424" class="dimsm" text-anchor="middle" fill="#3a4d63" font-weight="700">(3) NEW glazed aluminium shopfront + sliding entry (full 3-bay run)</text>
+
+      <rect x="60" y="446" width="830" height="250" fill="url(#patio)" stroke="#1A1A1A" stroke-width="2.5"/>
+      <text x="475" y="486" class="rmlbl" text-anchor="middle">FORECOURT PATIO</text>
+      <text x="475" y="503" class="rmsub" text-anchor="middle">festoon-lit outdoor sit-out · evening destination · (4) new paved deck</text>
+
+      <g fill="#556B2F" stroke="#1A1A1A" stroke-width="1.5">
+        <rect x="130" y="556" width="120" height="18" rx="8"/><rect x="130" y="606" width="120" height="18" rx="8"/>
+        <rect x="340" y="556" width="120" height="18" rx="8"/><rect x="340" y="606" width="120" height="18" rx="8"/>
+        <rect x="550" y="556" width="120" height="18" rx="8"/><rect x="550" y="606" width="120" height="18" rx="8"/>
+        <rect x="720" y="556" width="18" height="100" rx="8"/><rect x="760" y="556" width="18" height="100" rx="8"/>
+      </g>
+      <g fill="#2b2b2b" stroke="#1A1A1A" stroke-width="1.5">
+        <rect x="150" y="580" width="80" height="22" rx="3"/><rect x="360" y="580" width="80" height="22" rx="3"/>
+        <rect x="570" y="580" width="80" height="22" rx="3"/>
+      </g>
+      <g fill="#8A9A5B" stroke="#1A1A1A" stroke-width="1.5">
+        <circle cx="110" cy="536" r="11"/><circle cx="290" cy="536" r="11"/><circle cx="500" cy="536" r="11"/>
+        <circle cx="700" cy="536" r="11"/><circle cx="830" cy="536" r="11"/>
+      </g>
+      <text x="810" y="598" class="dimsm" text-anchor="middle">bench<tspan x="810" dy="13">booth</tspan></text>
+
+      <rect x="60" y="720" width="830" height="34" fill="#9a9a98" stroke="#1A1A1A" stroke-width="2"/>
+      <text x="475" y="742" class="tag" text-anchor="middle" fill="#fff">DUAL CARRIAGEWAY · solar street lights on median · drive-by frontage</text>
+
+      <line x1="60" y1="42" x2="890" y2="42" stroke="#333" stroke-width="1"/>
+      <line x1="60" y1="36" x2="60" y2="48" stroke="#333" stroke-width="1"/>
+      <line x1="890" y1="36" x2="890" y2="48" stroke="#333" stroke-width="1"/>
+      <text x="475" y="34" class="dim" text-anchor="middle">= 14.6 m  (48 ft) total front run</text>
+
+      <line x1="930" y1="70" x2="930" y2="404" stroke="#333" stroke-width="1"/>
+      <line x1="924" y1="70" x2="936" y2="70" stroke="#333" stroke-width="1"/>
+      <line x1="924" y1="404" x2="936" y2="404" stroke="#333" stroke-width="1"/>
+      <text x="958" y="237" class="dim" text-anchor="middle" transform="rotate(90 958 237)">6.3 m (20'8") depth</text>
+
+      <line x1="930" y1="446" x2="930" y2="696" stroke="#333" stroke-width="1"/>
+      <line x1="924" y1="446" x2="936" y2="446" stroke="#333" stroke-width="1"/>
+      <line x1="924" y1="696" x2="936" y2="696" stroke="#333" stroke-width="1"/>
+      <text x="958" y="571" class="dim" text-anchor="middle" transform="rotate(90 958 571)">~5 m (16 ft) patio</text>
+
+      <line x1="60" y1="420" x2="230" y2="420" stroke="#555" stroke-width="1"/>
+      <text x="145" y="438" class="dimsm" text-anchor="middle">kitchen ~3.4 m</text>
+    </svg>
+  </div>
+
+  <div class="legend">
+    <div class="lg"><div class="sw" style="background:repeating-linear-gradient(45deg,#1A1A1A 0 6px,#fff 6px 12px);"></div><div class="t">Chevron marble<small>Service + seating floor</small></div></div>
+    <div class="lg"><div class="sw" style="background:#dfe4e0;"></div><div class="t">Glass-block counter<small>Backlit, marble top</small></div></div>
+    <div class="lg"><div class="sw" style="background:#8B5A2B;"></div><div class="t">Walnut tulip tables<small>Terracotta + grey chairs</small></div></div>
+    <div class="lg"><div class="sw" style="background:#556B2F;"></div><div class="t">Green patio benches<small>Festoon-lit forecourt</small></div></div>
+  </div>
+
+  <div class="works">
+    <h4>Fit-out works flagged on this plan</h4>
+    <ul>
+      <li><b>(1) Pass-through door</b> — cut new internal doorway from kitchen to service bay (not currently open)</li>
+      <li><b>(2) Seal crack</b> — patch &amp; reinforce settlement crack on kitchen rear wall</li>
+      <li><b>(3) Shopfront</b> — install glazed aluminium storefront across full open frontage</li>
+      <li><b>(4) Floor slab</b> — pour finished concrete slab over raw dirt (bays) + paved patio deck</li>
+      <li><b>Beam height 7'8"</b> — low front beam governs door &amp; signage band height</li>
+      <li><b>MEP</b> — run electrical, water &amp; lighting; skin/insulate ceiling under zinc roof</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <span>Gemi · Drawing 01 · Floor Plan</span>
+    <span>Not for construction · concept dimensions from site survey</span>
+  </div>
+</div>
+</body>
+</html>

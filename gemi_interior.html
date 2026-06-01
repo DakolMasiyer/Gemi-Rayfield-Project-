@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemi — Interior 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#1A1A1A;--paper:#F4F1EC;--terracotta:#9B4A3A;--olive:#556B2F;--sage:#8A9A5B;--walnut:#8B5A2B;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#cfcabf;font-family:'Familjen Grotesk',sans-serif;color:var(--black);padding:34px 18px;}
+  .sheet{width:1240px;max-width:100%;margin:0 auto;background:var(--paper);border:1.5px solid var(--black);}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;padding:26px 40px;border-bottom:1.5px solid var(--black);}
+  .kick{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--terracotta);}
+  .ttl{font-family:'Fraunces',serif;font-size:38px;font-weight:500;margin-top:6px;}
+  .ttl span{font-style:italic;}
+  .head .meta{font-size:11px;text-align:right;color:#666;line-height:1.7;}
+  .scene{position:relative;width:100%;height:680px;overflow:hidden;}
+  .cap{padding:16px 40px;border-top:1.5px solid var(--black);font-size:12px;color:#555;display:flex;justify-content:space-between;}
+  .foot{padding:13px 40px;border-top:1.5px solid var(--black);display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#666;}
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet">
+  <div class="head">
+    <div>
+      <div class="kick">Drawing 03 · Interior Visual</div>
+      <div class="ttl">Inside <span>Gemi</span></div>
+    </div>
+    <div class="meta">Service counter + seating nook<br>Chevron marble · warm LED · terracotta seats<br>Concept impression, not photographic</div>
+  </div>
+
+  <div class="scene">
+    <svg viewBox="0 0 1240 680" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f0ea"/><stop offset="1" stop-color="#e7e2d8"/></linearGradient>
+        <linearGradient id="glassblk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef1ee"/><stop offset="1" stop-color="#cfd8d2"/></linearGradient>
+        <linearGradient id="marble" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f6f6f4"/><stop offset="0.5" stop-color="#e9e9e6"/><stop offset="1" stop-color="#f2f2ef"/></linearGradient>
+        <radialGradient id="ledglow" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#ffe9b8" stop-opacity="0.9"/><stop offset="1" stop-color="#ffe9b8" stop-opacity="0"/></radialGradient>
+        <linearGradient id="walnut" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a06a36"/><stop offset="1" stop-color="#7d4f24"/></linearGradient>
+      </defs>
+
+      <!-- WALLS + CEILING -->
+      <rect x="0" y="0" width="1240" height="430" fill="url(#wall)"/>
+      <!-- ceiling -->
+      <polygon points="0,0 1240,0 1080,90 160,90" fill="#efeae0"/>
+      <polygon points="160,90 1080,90 1080,110 160,110" fill="#e3ddd1"/>
+      <!-- side wall left (perspective) -->
+      <polygon points="0,0 160,90 160,520 0,600" fill="#e9e4da"/>
+      <!-- side wall right -->
+      <polygon points="1240,0 1080,90 1080,520 1240,600" fill="#ece7dd"/>
+
+      <!-- linear warm LED pendants -->
+      <g>
+        <rect x="360" y="96" width="280" height="14" rx="3" fill="#2a2a2a"/>
+        <rect x="368" y="100" width="264" height="6" rx="3" fill="#ffd98a"/>
+        <ellipse cx="500" cy="150" rx="240" ry="60" fill="url(#ledglow)"/>
+        <rect x="720" y="120" width="240" height="13" rx="3" fill="#2a2a2a"/>
+        <rect x="728" y="124" width="224" height="5" rx="3" fill="#ffd98a"/>
+        <ellipse cx="840" cy="175" rx="210" ry="55" fill="url(#ledglow)"/>
+      </g>
+      <!-- black cylinder downlights -->
+      <g fill="#2a2a2a"><rect x="250" y="92" width="16" height="22" rx="3"/><rect x="290" y="92" width="16" height="22" rx="3"/><rect x="980" y="100" width="16" height="22" rx="3"/></g>
+
+      <!-- BIG gemi logo on back wall -->
+      <text x="470" y="250" font-family="Familjen Grotesk" font-weight="700" font-size="78" fill="#1A1A1A" letter-spacing="-4">gemi</text>
+      <ellipse cx="672" cy="186" rx="10" ry="13" fill="#1A1A1A"/><ellipse cx="690" cy="182" rx="8" ry="11" fill="#1A1A1A" transform="rotate(20 690 182)"/>
+
+      <!-- CHEVRON MARBLE FLOOR (perspective) -->
+      <polygon points="0,600 1240,600 1240,680 0,680" fill="#fff"/>
+      <polygon points="160,520 1080,520 1240,600 0,600" fill="#ffffff"/>
+      <!-- chevron stripes on floor (converging) -->
+      <g>
+        <polygon points="160,520 230,520 70,600 0,600 0,585" fill="#1A1A1A"/>
+        <polygon points="300,520 370,520 250,600 130,600" fill="#1A1A1A"/>
+        <polygon points="440,520 510,520 430,600 310,600" fill="#1A1A1A"/>
+        <polygon points="580,520 650,520 610,600 490,600" fill="#1A1A1A"/>
+        <polygon points="720,520 790,520 790,600 670,600" fill="#1A1A1A"/>
+        <polygon points="860,520 930,520 970,600 850,600" fill="#1A1A1A"/>
+        <polygon points="1000,520 1070,520 1150,600 1030,600" fill="#1A1A1A"/>
+      </g>
+      <!-- foreground floor band -->
+      <g>
+        <polygon points="0,600 90,600 0,680" fill="#1A1A1A"/>
+        <polygon points="200,600 320,600 240,680 110,680" fill="#1A1A1A"/>
+        <polygon points="440,600 560,600 500,680 360,680" fill="#1A1A1A"/>
+        <polygon points="680,600 790,600 770,680 620,680" fill="#1A1A1A"/>
+        <polygon points="900,600 1010,600 1050,680 900,680" fill="#1A1A1A"/>
+        <polygon points="1130,600 1240,600 1240,680 1110,680" fill="#1A1A1A"/>
+      </g>
+
+      <!-- SERVICE COUNTER (left) illuminated glass block + marble top -->
+      <g>
+        <!-- counter body glass blocks -->
+        <rect x="90" y="330" width="300" height="150" fill="url(#glassblk)" stroke="#1A1A1A" stroke-width="2"/>
+        <!-- glass block grid -->
+        <g stroke="#b7c2bb" stroke-width="1.5">
+          <line x1="90" y1="380" x2="390" y2="380"/><line x1="90" y1="430" x2="390" y2="430"/>
+          <line x1="160" y1="330" x2="160" y2="480"/><line x1="230" y1="330" x2="230" y2="480"/><line x1="300" y1="330" x2="300" y2="480"/>
+        </g>
+        <!-- internal glow -->
+        <rect x="94" y="334" width="292" height="142" fill="#fff" opacity="0.18"/>
+        <!-- marble top -->
+        <rect x="78" y="312" width="324" height="24" fill="url(#marble)" stroke="#1A1A1A" stroke-width="1.5"/>
+        <!-- subtle marble veining -->
+        <g stroke="#c9c9c4" stroke-width="1" opacity="0.7"><path d="M120,324 q40,-6 80,2 t90,-3"/><path d="M260,330 q30,-5 70,1"/></g>
+        <!-- some product jars on counter -->
+        <g><rect x="300" y="288" width="20" height="24" rx="3" fill="#c0492f"/><rect x="328" y="288" width="20" height="24" rx="3" fill="#c0492f"/><circle cx="120" cy="300" r="11" fill="#d8d2c4"/></g>
+      </g>
+
+      <!-- WALNUT TULIP TABLE + chairs (centre-right) -->
+      <g>
+        <!-- table -->
+        <ellipse cx="780" cy="470" rx="120" ry="40" fill="url(#walnut)" stroke="#1A1A1A" stroke-width="2"/>
+        <ellipse cx="780" cy="466" rx="120" ry="40" fill="#a06a36"/>
+        <path d="M760,500 Q740,560 720,600 L840,600 Q820,560 800,500 Z" fill="#2a2a2a"/>
+        <ellipse cx="780" cy="600" rx="70" ry="16" fill="#1f1f1f"/>
+        <!-- chair left (terracotta) -->
+        <g>
+          <rect x="610" y="430" width="70" height="78" rx="10" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.5"/>
+          <g stroke="#7d3a2d" stroke-width="2"><line x1="624" y1="436" x2="624" y2="500"/><line x1="640" y1="436" x2="640" y2="500"/><line x1="656" y1="436" x2="656" y2="500"/><line x1="672" y1="436" x2="672" y2="500"/></g>
+          <rect x="610" y="500" width="70" height="20" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.5"/>
+          <g stroke="#1A1A1A" stroke-width="3"><line x1="618" y1="520" x2="614" y2="580"/><line x1="672" y1="520" x2="676" y2="580"/></g>
+        </g>
+        <!-- chair right (grey) -->
+        <g>
+          <rect x="888" y="430" width="70" height="78" rx="10" fill="#cdb8a0" stroke="#1A1A1A" stroke-width="1.5"/>
+          <g stroke="#a8957f" stroke-width="2"><line x1="902" y1="436" x2="902" y2="500"/><line x1="918" y1="436" x2="918" y2="500"/><line x1="934" y1="436" x2="934" y2="500"/><line x1="950" y1="436" x2="950" y2="500"/></g>
+          <rect x="888" y="500" width="70" height="20" fill="#9B4A3A" stroke="#1A1A1A" stroke-width="1.5"/>
+          <g stroke="#1A1A1A" stroke-width="3"><line x1="896" y1="520" x2="892" y2="580"/><line x1="950" y1="520" x2="954" y2="580"/></g>
+        </g>
+        <!-- branded bowl on table -->
+        <ellipse cx="780" cy="462" rx="34" ry="13" fill="#fff" stroke="#cfcabf" stroke-width="1.5"/>
+        <text x="780" y="467" font-family="Familjen Grotesk" font-weight="700" font-size="11" fill="#1A1A1A" text-anchor="middle">gemi</text>
+      </g>
+
+      <!-- floor lamp right -->
+      <g>
+        <rect x="1010" y="300" width="60" height="50" rx="4" fill="#2a2a2a"/>
+        <line x1="1040" y1="350" x2="1040" y2="520" stroke="#2a2a2a" stroke-width="4"/>
+        <ellipse cx="1040" cy="520" rx="30" ry="8" fill="#1f1f1f"/>
+      </g>
+
+      <!-- potted plant left foreground -->
+      <g>
+        <path d="M120,600 Q90,520 70,540 M120,600 Q150,510 175,535 M120,600 Q120,505 120,535 M120,600 Q100,520 80,510" stroke="#3f6b34" stroke-width="6" fill="none"/>
+        <path d="M120,600 Q140,520 165,510" stroke="#4d7d3f" stroke-width="6" fill="none"/>
+        <rect x="96" y="600" width="48" height="50" rx="4" fill="#b5532f"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="cap">
+    <span><b>Interior</b> — backlit glass-block counter with marble top, oversized Gemi logo on the feature wall, chevron marble floor, walnut tulip table with terracotta and grey channel-tufted chairs, warm linear LED pendants.</span>
+    <span style="color:#9B4A3A;font-weight:600;">Premium fast-casual</span>
+  </div>
+  <div class="foot">
+    <span>Gemi · Drawing 03 · Interior</span>
+    <span>Concept impression · Rayfield, Jos</span>
+  </div>
+</div>
+</body>
+</html>
