@@ -21,9 +21,10 @@
     --line:#1A1A1A;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:#cfcabf;font-family:'Familjen Grotesk',sans-serif;color:var(--black);padding:40px 20px;}
+  body{background:#c8c3b8;font-family:'Familjen Grotesk',sans-serif;color:var(--black);padding:40px 20px;overflow-x:hidden;}
+  .scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
   .board{
-    width:1240px;max-width:100%;margin:0 auto;background:var(--paper);
+    width:1240px;min-width:760px;max-width:100%;margin:0 auto;background:var(--paper);
     border:1.5px solid var(--black);
   }
 
@@ -88,7 +89,7 @@
 
   /* floor pattern swatch */
   .floorpat{background:
-    repeating-linear-gradient(45deg,#1A1A1A 0 14px,#fff 14px 28px);}
+    repeating-linear-gradient(45deg,#1A1A1A 0 10px,#fff 10px 20px);}
   /* counter glass block */
   .glassblk{background:
     linear-gradient(135deg,rgba(255,255,255,.85),rgba(200,210,205,.6)),
@@ -100,6 +101,7 @@
 
   /* ---------- FOOTER STATEMENT ---------- */
   .foot{display:grid;grid-template-columns:1.5fr 1fr;}
+  @media(max-width:700px){.foot{grid-template-columns:1fr;}.foot .fr{border-left:none;border-top:1.5px solid var(--black);}}
   .foot .fl{padding:38px 48px;}
   .foot .fr{padding:38px 44px;background:var(--terracotta);color:#fff;border-left:1.5px solid var(--black);}
   .foot h3{font-family:'Fraunces',serif;font-size:23px;font-weight:500;margin-bottom:12px;}
@@ -112,6 +114,7 @@
 </style>
 </head>
 <body>
+<div class="scroll-wrap">
 <div class="board" id="board">
 
   <!-- MASTHEAD -->
@@ -200,6 +203,7 @@
     <span>Rayfield · Jos · Plateau State</span>
   </div>
 
+</div>
 </div>
 </body>
 </html>
