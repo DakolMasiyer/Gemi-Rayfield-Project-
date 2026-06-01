@@ -9,8 +9,9 @@
 <style>
   :root{--black:#1A1A1A;--paper:#F4F1EC;--terracotta:#9B4A3A;--olive:#556B2F;--sage:#8A9A5B;--walnut:#8B5A2B;--cream:#EADCC9;--blue:#3a4d63;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:#cfcabf;font-family:'Familjen Grotesk',sans-serif;color:var(--black);padding:34px 18px;}
-  .sheet{width:1240px;max-width:100%;margin:0 auto;background:var(--paper);border:1.5px solid var(--black);}
+  body{background:#c8c3b8;font-family:'Familjen Grotesk',sans-serif;color:var(--black);padding:34px 18px;overflow-x:hidden;}
+  .scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .sheet{width:1240px;min-width:860px;max-width:100%;margin:0 auto;background:var(--paper);border:1.5px solid var(--black);}
   .head{display:grid;grid-template-columns:1.5fr 1fr;border-bottom:1.5px solid var(--black);}
   .h-l{padding:30px 40px;border-right:1.5px solid var(--black);}
   .kick{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--terracotta);}
@@ -32,6 +33,7 @@
   .works{padding:18px 40px;border-top:1.5px solid var(--black);background:#efe9df;}
   .works h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta);font-weight:700;margin-bottom:10px;}
   .works ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px 24px;}
+  @media(max-width:700px){.works ul{grid-template-columns:1fr;}}
   .works li{font-size:11.5px;line-height:1.4;padding-left:18px;position:relative;color:#333;}
   .works li::before{content:"\25B8";position:absolute;left:0;color:var(--terracotta);font-size:11px;}
   .foot{padding:14px 40px;border-top:1.5px solid var(--black);display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#666;}
@@ -47,6 +49,7 @@
 </style>
 </head>
 <body>
+<div class="scroll-wrap">
 <div class="sheet" id="sheet">
   <div class="head">
     <div class="h-l">
@@ -204,6 +207,7 @@
     <span>Gemi · Drawing 01 · Floor Plan</span>
     <span>Not for construction · concept dimensions from site survey</span>
   </div>
+</div>
 </div>
 </body>
 </html>

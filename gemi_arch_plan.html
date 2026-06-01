@@ -7,10 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#1c2733;--sheet:#fbfbf9;--blue:#1f4e79;--red:#b8232f;--grid:#c8d2dc;}
+  :root{--ink:#1c2733;--sheet:#fdfcf9;--blue:#1f4e79;--red:#c04040;--grid:#c8d2dc;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:#9aa3ab;font-family:'Familjen Grotesk',sans-serif;color:var(--ink);padding:30px 16px;}
-  .sheet{width:1280px;max-width:100%;margin:0 auto;background:var(--sheet);border:3px double var(--ink);position:relative;}
+  body{background:#e0d9ce;font-family:'Familjen Grotesk',sans-serif;color:var(--ink);padding:30px 16px;overflow-x:hidden;}
+  .scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .sheet{width:1280px;min-width:900px;max-width:100%;margin:0 auto;background:var(--sheet);border:3px double var(--ink);position:relative;}
   .innerborder{position:absolute;inset:10px;border:1px solid var(--ink);pointer-events:none;}
   .draw{padding:26px 30px 0;}
   svg{width:100%;height:auto;display:block;}
@@ -41,12 +42,13 @@
   .tb-num .seg:last-child{border-bottom:none;}
   .tb-num .lbl{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#666;font-weight:600;}
   .tb-num .big{font-size:18px;font-weight:700;letter-spacing:.02em;}
-  .legendbar{display:flex;flex-wrap:wrap;gap:18px;padding:12px 30px;border-top:1px solid var(--ink);font-size:9.5px;}
+  .legendbar{display:flex;flex-wrap:wrap;gap:18px;padding:12px 30px;border-top:2px solid var(--ink);font-size:9.5px;}
   .lk{display:flex;align-items:center;gap:7px;}
   .lk .ic{width:34px;height:0;flex-shrink:0;}
 </style>
 </head>
 <body>
+<div class="scroll-wrap">
 <div class="sheet" id="sheet">
   <div class="innerborder"></div>
   <div class="draw">
@@ -68,7 +70,7 @@
 
       <!-- ===================== GRID LINES (column grid) ===================== -->
       <!-- vertical grid lines A-E at piers -->
-      <g stroke="var(--red)" stroke-width="0.6" stroke-dasharray="10 3 2 3" opacity="0.75">
+      <g stroke="var(--red)" stroke-width="0.6" stroke-dasharray="10 3 2 3" opacity="0.55">
         <line x1="120" y1="60" x2="120" y2="470"/>
         <line x1="300" y1="60" x2="300" y2="470"/>
         <line x1="480" y1="60" x2="480" y2="470"/>
@@ -348,6 +350,7 @@
       <div class="seg"><div class="lbl">Sheet</div><div class="big">1 of 1</div></div>
     </div>
   </div>
+</div>
 </div>
 </body>
 </html>
